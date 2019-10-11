@@ -129,7 +129,7 @@ export default class App extends Component {
   renderPlayerView = () => {
     const { paused } = this.state;
     const source = {
-      uri: "https://stream.mux.com/BmijxXeYjmRg6P02fZJpuGotQX6OV4zxL.m3u8"
+      uri: "https://stream.mux.com/aU2z61KYKRRB4p4AqgUgMK00GKTdOjVRP.m3u8"
     };
     return (
       <Video
@@ -171,7 +171,7 @@ export default class App extends Component {
           this.vb = vb;
         }}
         /* eslint-enable */
-        outputUrl="rtmp://live.mux.com/app/90b82556-cc28-d952-2ff9-938c459da74f"
+        outputUrl="rtmp://live.mux.com/app/556e2ad0-f801-9aa7-7579-0d481d6a646c"
         camera={settings.camera}
         audio={settings.audio}
         video={settings.video}
