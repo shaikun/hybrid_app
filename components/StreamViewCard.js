@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     shadowColor: "#000",
     shadowOpacity: 0.1,
     shadowRadius: 1.5,
-    overflow: "hidden"
+    overflow: "scroll"
   },
   cardItemImagePlace: {
     flex: 1,
