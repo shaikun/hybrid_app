@@ -2,19 +2,21 @@ import React, { Component } from "react";
 import { StyleSheet, View, TouchableOpacity, Text, Image } from "react-native";
 
 export default class StreamItemCard extends Component {
+
+  
   render() {
     return (
-      <View style={[styles.container, this.props.style]}>
+      <View style={[styles.StreamItemCardContainer, this.props.style]}>
         <TouchableOpacity
-          onPress={() => console.log("Navigate to WatchStreamView")}
+          onPress={this.props.press}
           style={styles.button}
         >
           <View style={styles.bodyContent}>
-            <Text style={styles.titleStyle}>Title goes here</Text>
-            <Text style={styles.subtitleStyle}>Subtitle here</Text>
+            <Text style={styles.titleStyle}>{this.props.title}</Text>
+            <Text style={styles.subtitleStyle}>{this.props.subtitle}</Text>
           </View>
           <Image
-            source={require("../assets/images/cardImage2.png")}
+            source={require("./placeholder_background.jpg")}
             style={styles.cardItemImagePlace}
           />
         </TouchableOpacity>
@@ -24,7 +26,7 @@ export default class StreamItemCard extends Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
+  StreamItemCardContainer: {
     backgroundColor: "rgba(179,179,179,1)",
     opacity: 1,
     flexWrap: "nowrap",

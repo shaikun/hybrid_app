@@ -1,24 +1,28 @@
 import React, { Component } from "react";
-import { StyleSheet, View, Image, Text, TouchableOpacity } from "react-native";
+import { StyleSheet, View, Image, Text, TouchableOpacity,Video } from "react-native";
 
 export default class StreamViewCard extends Component {
   render() {
     return (
       <View style={[styles.container, this.props.style]}>
-        <Image
-          source={require("../assets/images/galaxy__free_phone_background_by_roguewinds_dbl2cxq-fullview.jpg")}
-          resizeMode="contain"
-          style={styles.cardItemImagePlace}
-        />
+        {this.props.children}
         <View style={styles.cardBody}>
           <View style={styles.bodyContent}>
-            <Text style={styles.titleStyle}>Title goes here</Text>
-            <Text style={styles.subtitleStyle}>Subtitle here</Text>
+            <Text style={styles.titleStyle}>{this.props.title}</Text>
+            <Text style={styles.subtitleStyle}>{this.props.subtitle}</Text>
           </View>
           <View style={styles.actionBody}>
-            <TouchableOpacity style={styles.actionButton1}>
+            <TouchableOpacity style={styles.actionButton1} onPress={this.props.adminEvent}>
               <Text style={styles.actionText1}>
                 {this.props.actionText1 || "Back to menu"}
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity 
+              style={styles.button}
+              onPress={this.props.pauseEvent}
+            >
+              <Text style={styles.text}>
+                {this.props.paused ? "Start" : "Stop"}
               </Text>
             </TouchableOpacity>
           </View>
@@ -85,6 +89,20 @@ const styles = StyleSheet.create({
     borderRadius: 10
   },
   actionText1: {
+    color: "#FFF",
+    opacity: 0.9,
+    fontSize: 14
+  },
+  button: {
+    width: 52,
+    height: 36,
+    backgroundColor: "rgba(27,27,27,1)",
+    opacity: 1,
+    marginLeft: 15,
+    padding: 8,
+    borderRadius: 10
+  },
+  text: {
     color: "#FFF",
     opacity: 0.9,
     fontSize: 14

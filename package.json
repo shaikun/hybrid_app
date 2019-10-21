@@ -5,8 +5,10 @@
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest",
+    "rebuild":"react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res",
     "android": "react-native run-android",
-    "ios": "react-native run-ios"
+    "ios": "react-native run-ios",
+    "adbRefresh":"adb shell input text \"RR\""
   },
   "dependencies": {
     "react": "16.6.3",
